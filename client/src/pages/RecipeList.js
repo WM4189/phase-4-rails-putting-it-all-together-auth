@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Box, Button } from "../styles";
+import {uid} from 'react-uid';
 
 function RecipeList() {
   const [recipes, setRecipes] = useState([]);
@@ -17,7 +18,7 @@ function RecipeList() {
     <Wrapper>
       {recipes.length > 0 ? (
         recipes.map((recipe) => (
-          <Recipe key={recipe.id}>
+          <Recipe key={uid(recipe)}>
             <Box>
               <h2>{recipe.title}</h2>
               <p>
